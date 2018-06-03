@@ -14,7 +14,8 @@ public class Student {
 	private Integer age;
 	private LocalDate dob;
 	private String attitude;
-	
+	private boolean funny;
+	private boolean acnAcademyStudent = true;
 	/**
 	 * Default constructor.
 	 */
@@ -86,6 +87,34 @@ public class Student {
 		this.attitude = attitude;
 	}
 	
+	/**
+	 * @return the funny
+	 */
+	public boolean isFunny() {
+		return funny;
+	}
+
+	/**
+	 * @param funny the funny to set
+	 */
+	public void setFunny(boolean funny) {
+		this.funny = funny;
+	}
+
+	/**
+	 * @return the AcnAcademyStudent
+	 */
+	public boolean isAcnAcademyStudent() {
+		return acnAcademyStudent;
+	}
+
+	/**
+	 * @param AcnAcademyStudent the AcnAcademyStudent to set
+	 */
+	public void setAcnAcademyStudent(boolean AcnAcademyStudent) {
+		this.acnAcademyStudent = AcnAcademyStudent;
+	}
+
 	/**
 	 * Helper method to know whether the student is under-age.
 	 * 
