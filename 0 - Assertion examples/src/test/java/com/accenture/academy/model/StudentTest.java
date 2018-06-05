@@ -46,7 +46,7 @@ public class StudentTest {
 	public void testAssertTrue() {
 		Student studentAnna = new Student();
 		studentAnna.setFirstName("Anna");
-		//no need to initialise 'funny' field. funny is of type primitive boolean, default value = false.
+		//no need to initialize 'funny' field. funny is of type primitive boolean, default value = false.
 		
 		assertTrue("By default a student must be an accenture academy student", studentAnna.isAcnAcademyStudent());
 	}

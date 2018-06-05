@@ -15,12 +15,14 @@ public class Student {
 	private LocalDate dob;
 	private String attitude;
 	private boolean funny;
-	private boolean acnAcademyStudent = true;
+	private boolean acnAcademyStudent;
 	/**
 	 * Default constructor.
 	 */
 	public Student() {
 		super();
+		this.acnAcademyStudent = true;
+		this.funny = true;
 	}
 
 	/**
