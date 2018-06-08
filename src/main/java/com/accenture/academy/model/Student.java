@@ -19,6 +19,7 @@ public class Student {
 	private String attitude;
 	private boolean funny;
 	private boolean acnAcademyStudent;
+	private double pocketMoney;
 
 	/**
 	 * Default constructor. Initializing acnAcademyStudent and funny field.
@@ -26,7 +27,8 @@ public class Student {
 	public Student() {
 		super();
 		this.acnAcademyStudent = true;
-		this.funny = true;
+		this.funny = false;
+		this.pocketMoney = 0.00008d;
 	}
 
 	/**
@@ -150,5 +152,21 @@ public class Student {
 	public boolean isMinor() {
 		return this.age < 18;
 	}
+
+	/**
+	 * @return the pocketMoney
+	 */
+	public double getPocketMoney() {
+		return pocketMoney;
+	}
+
+	/**
+	 * @param pocketMoney the pocketMoney to set
+	 */
+	public void setPocketMoney(double pocketMoney) {
+		this.pocketMoney = pocketMoney;
+	}
+	
+	
 
 }
