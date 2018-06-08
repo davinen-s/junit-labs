@@ -24,7 +24,7 @@ public class UniversityService {
 	 * exception to avoid increasing the complexity of the lab by add a Repository
 	 * layer.
 	 */
-
+	
 	public static University university;
 
 	/**
@@ -41,7 +41,7 @@ public class UniversityService {
 	 * @return a registered student
 	 */
 	public static Student registerStudent(String firstName, String lastName, LocalDate dob, Boolean acnAcademyStudent) {
-
+		//university = new University(); //added this here
 		Student student = new Student();
 		student.setFirstName(firstName);
 		student.setLastName(lastName);
