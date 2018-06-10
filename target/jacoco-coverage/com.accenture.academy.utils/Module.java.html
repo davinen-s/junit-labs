@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Module.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab</a> &gt; <a href="index.source.html" class="el_package">com.accenture.academy.utils</a> &gt; <span class="el_source">Module.java</span></div><h1>Module.java</h1><pre class="source lang-java linenums">package com.accenture.academy.utils;
+
+import java.util.EnumSet;
+
+import com.accenture.academy.exception.ModuleNotFoundException;
+
+/**
+ * Enum representing the modules available at the university.
+ * 
+ * @author davinen.s.curoopen
+ */
+<span class="fc" id="L12">public enum Module {</span>
+
+	/** Spring framework. */
+<span class="fc" id="L15">	SPRING_FRAMEWORK(&quot;Spring Framework&quot;),</span>
+
+	/** Mobile Development. */
+<span class="fc" id="L18">	MOBILE_DEVELOPMENT(&quot;Mobile Dev&quot;),</span>
+
+	/** Agile Methodology. */
+<span class="fc" id="L21">	AGILE_METHODOLOGY(&quot;Agile Methodology&quot;),</span>
+
+	/** Web Development. */
+<span class="fc" id="L24">	WEB_DEVELOPMENT(&quot;Web Development&quot;),</span>
+
+	/** Build and Unit test. */
+<span class="fc" id="L27">	BUILD_AND_UNIT_TEST(&quot;Build and Unit test&quot;);</span>
+
+	/** The module name. **/
+	private String moduleName;
+
+	/**
+	 * Private constructor.
+	 * 
+	 * @param moduleName
+	 *            the module's name.
+	 */
+<span class="fc" id="L38">	private Module(String moduleName) {</span>
+<span class="fc" id="L39">		this.moduleName = moduleName;</span>
+<span class="fc" id="L40">	}</span>
+
+	/**
+	 * @return the moduleName
+	 */
+	public String getModuleName() {
+<span class="fc" id="L46">		return moduleName;</span>
+	}
+
+	/**
+	 * find a module by name.
+	 * 
+	 * @param moduleName
+	 *            the module's name
+	 * @return
+	 * @throws ModuleNotFoundException
+	 *             if module is not found
+	 */
+	public static Module getModuleByName(String moduleName) throws ModuleNotFoundException {
+<span class="fc" id="L59">		return EnumSet.allOf(Module.class).stream().filter(m -&gt; m.getModuleName().equals(moduleName)).findAny()</span>
+<span class="fc" id="L60">				.orElseThrow(() -&gt; new ModuleNotFoundException());</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>
