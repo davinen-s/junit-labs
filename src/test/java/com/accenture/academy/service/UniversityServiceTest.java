@@ -27,16 +27,6 @@ public class UniversityServiceTest {
 	}
 
 	@Test
-	public void testNewStudentObjectDefaultFields() {
-		Student s = new Student();
-
-		assertTrue(s.isAcnAcademyStudent());
-		assertTrue(s.isFunny());
-		assertNotNull(s.getEnrolledModules());
-		assertEquals(AppParametersUtils.FREE_MODULE_VOUCHER, s.getFreeModuleVouchers());
-	}
-
-	@Test
 	public void testRegisterStudentFieldValues() {
 		Student s = UniversityService.registerStudent("yoven", "ayassamy", LocalDate.of(1993, 9, 9), false);
 
