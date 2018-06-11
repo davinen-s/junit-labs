@@ -7,14 +7,16 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Lab</name>
 	<description>	</description>
-	
-	<!-- added parent  -->
-	<parent>
+
+	<!-- added parent -->
+<!-- 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+		<relativePath />
+		lookup parent from repository
+	</parent> -->
+	
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -25,14 +27,16 @@
 	<!-- Test dependencies. -->
 	<dependencies>
 
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			<version>4.12</version>
 		</dependency>
 
+
 		<!-- added the things below -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
@@ -41,7 +45,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
+		
 
 	</dependencies>
 
@@ -88,10 +93,11 @@
 			</plugin>
 
 			<!-- added the things below -->
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin> -->
+			
 
 		</plugins>
 	</build>
