@@ -25,7 +25,7 @@ public class UniversityService {
 	 * layer.
 	 */
 
-	public static University university;
+	public static University university = new University();
 
 	/**
 	 * Register a student in the university database.
@@ -62,6 +62,7 @@ public class UniversityService {
 		} while (university.getCurrentStudent().containsKey(studentId));
 
 		student.setId(studentId);
+		university.addStudent(student);
 		return student;
 
 	}
@@ -74,27 +75,29 @@ public class UniversityService {
 	 * @param moduleNames
 	 *            modules to be registered for the student
 	 * @throws ModuleNotFoundException
-	 * @throws BusinessException 
+	 * @throws BusinessException
 	 */
-	public static void enrollModules(Integer studentId, List<String> moduleNames) throws ModuleNotFoundException, BusinessException {
-		
+	public static void enrollModules(Integer studentId, List<String> moduleNames)
+			throws ModuleNotFoundException, BusinessException {
+
 		Student student = university.getCurrentStudent().get(studentId);
-		
+
 		for (String moduleName : moduleNames) {
 			Module module = Module.getModuleByName(moduleName);
-			
-			if(student.isAcnAcademyStudent()) {
-				//module is free
+
+			if (student.isAcnAcademyStudent()) {
+				// module is free
 				student.addEnrolledModule(module);
 			} else {
 				int freeVouchers = student.getFreeModuleVouchers();
-				
-				//we use the free vouchers.
-				if(freeVouchers > 0) {
-					//decrementing voucher
-					student.setFreeModuleVouchers(freeVouchers -1);
+
+				// we use the free vouchers.
+				if (freeVouchers > 0) {
+					// decrementing voucher
+					student.setFreeModuleVouchers(freeVouchers - 1);
 				} else {
-					throw new BusinessException("No module vouchers found. Please purchase more vouchers to enroll additional modules.");
+					throw new BusinessException(
+							"No module vouchers found. Please purchase more vouchers to enroll additional modules.");
 				}
 			}
 		}
