@@ -14,17 +14,10 @@ import org.junit.Test;
 import com.accenture.academy.exception.BusinessException;
 import com.accenture.academy.exception.ModuleNotFoundException;
 import com.accenture.academy.model.Student;
-import com.accenture.academy.model.University;
 import com.accenture.academy.utils.AppParametersUtils;
 import com.accenture.academy.utils.Module;
 
 public class UniversityServiceTest {
-
-	@Test
-	public void testIfNewUniversityObjectCurrentStudentIsNotNull() {
-		University u = new University();
-		assertNotNull(u.getCurrentStudent());
-	}
 
 	@Test
 	public void testRegisterStudentFieldValues() {
