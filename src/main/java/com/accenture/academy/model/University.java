@@ -33,8 +33,8 @@ public class University {
 	 * @param currentStudent
 	 *            the currentStudent to set
 	 */
-	public void addStudent(Map<Integer, Student> currentStudent) {
-		this.currentStudent = currentStudent;
+	public void addStudent(Student student) {
+		this.currentStudent.put(student.getId(), student) ;
 	}
 
 }
