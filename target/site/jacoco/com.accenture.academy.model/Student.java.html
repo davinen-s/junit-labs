@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab</a> &gt; <a href="index.source.html" class="el_package">com.accenture.academy.model</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package com.accenture.academy.model;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.accenture.academy.utils.AppParametersUtils;
+import com.accenture.academy.utils.Module;
+
+/**
+ * Java Bean representing a student.
+ * 
+ * @author davinen.s.curoopen
+ */
+public class Student {
+
+	private Integer id;
+	private String firstName;
+	private String lastName;
+	private Integer age;
+
+	/** date of birth. */
+	private LocalDate dob;
+	private String attitude;
+	private boolean funny;
+	private boolean acnAcademyStudent;
+	private Integer moduleVouchers;
+	private List&lt;Module&gt; enrolledModules;
+
+	/**
+	 * Default constructor. Initializing acnAcademyStudent, freeModuleVouchers, enrolledModules and
+	 * funny field.
+	 */
+	public Student() {
+<span class="fc" id="L35">		super();</span>
+<span class="fc" id="L36">		this.acnAcademyStudent = true;</span>
+<span class="fc" id="L37">		this.funny = true;</span>
+<span class="fc" id="L38">		this.moduleVouchers = AppParametersUtils.FREE_MODULE_VOUCHER;</span>
+<span class="fc" id="L39">		this.enrolledModules = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L40">	}</span>
+
+	/**
+	 * 
+	 * @return
+	 */
+	public int getFreeModuleVouchers() {
+<span class="fc" id="L47">		return moduleVouchers;</span>
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+<span class="nc" id="L54">		return id;</span>
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(Integer id) {
+<span class="nc" id="L62">		this.id = id;</span>
+<span class="nc" id="L63">	}</span>
+
+	/**
+	 * 
+	 * @param freeModuleVouchers
+	 */
+	public void setFreeModuleVouchers(int freeModuleVouchers) {
+<span class="nc" id="L70">		this.moduleVouchers = freeModuleVouchers;</span>
+<span class="nc" id="L71">	}</span>
+
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+<span class="nc" id="L77">		return firstName;</span>
+	}
+
+	/**
+	 * @param firstName
+	 *            the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+<span class="nc" id="L85">		this.firstName = firstName;</span>
+<span class="nc" id="L86">	}</span>
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+<span class="nc" id="L92">		return lastName;</span>
+	}
+
+	/**
+	 * @param lastName
+	 *            the lastName to set
+	 */
+	public void setLastName(String lastName) {
+<span class="nc" id="L100">		this.lastName = lastName;</span>
+<span class="nc" id="L101">	}</span>
+
+	/**
+	 * @return the age
+	 */
+	public Integer getAge() {
+<span class="nc" id="L107">		return age;</span>
+	}
+
+	/**
+	 * @param age
+	 *            the age to set
+	 */
+	public void setAge(Integer age) {
+<span class="nc" id="L115">		this.age = age;</span>
+<span class="nc" id="L116">	}</span>
+
+	/**
+	 * @return the dob
+	 */
+	public LocalDate getDob() {
+<span class="nc" id="L122">		return dob;</span>
+	}
+
+	/**
+	 * @param dob
+	 *            the dob to set
+	 */
+	public void setDob(LocalDate dob) {
+<span class="nc" id="L130">		this.dob = dob;</span>
+<span class="nc" id="L131">	}</span>
+
+	public String getAttitude() {
+<span class="nc" id="L134">		return attitude;</span>
+	}
+
+	public void setAttitude(String attitude) {
+<span class="nc" id="L138">		this.attitude = attitude;</span>
+<span class="nc" id="L139">	}</span>
+
+	/**
+	 * @return the funny
+	 */
+	public boolean isFunny() {
+<span class="nc" id="L145">		return funny;</span>
+	}
+
+	/**
+	 * @param funny
+	 *            the funny to set
+	 */
+	public void setFunny(boolean funny) {
+<span class="nc" id="L153">		this.funny = funny;</span>
+<span class="nc" id="L154">	}</span>
+
+	/**
+	 * @return the AcnAcademyStudent
+	 */
+	public boolean isAcnAcademyStudent() {
+<span class="nc" id="L160">		return acnAcademyStudent;</span>
+	}
+
+	/**
+	 * @param acnAcademyStudent
+	 *            the AcnAcademyStudent to set
+	 */
+	public void setAcnAcademyStudent(boolean acnAcademyStudent) {
+<span class="nc" id="L168">		this.acnAcademyStudent = acnAcademyStudent;</span>
+<span class="nc" id="L169">	}</span>
+
+	/**
+	 * @return the enrolledModules
+	 */
+	public List&lt;Module&gt; getEnrolledModules() {
+<span class="nc" id="L175">		return enrolledModules;</span>
+	}
+
+	/**
+	 * @param enrolledModules
+	 *            the enrolledModules to set
+	 */
+	public void setEnrolledModules(List&lt;Module&gt; enrolledModules) {
+<span class="nc" id="L183">		this.enrolledModules = enrolledModules;</span>
+<span class="nc" id="L184">	}</span>
+
+	/**
+	 * Helper method to know whether the student is under-age.
+	 * 
+	 * @return true if the student is a minor.
+	 */
+	public boolean isMinor() {
+<span class="nc bnc" id="L192" title="All 2 branches missed.">		return this.age &lt; 18;</span>
+	}
+
+	/**
+	 * Helper method to add a module to the enrolled modules list.
+	 * 
+	 * @param module
+	 *            the module to be added.
+	 */
+	public void addEnrolledModule(Module module) {
+<span class="nc" id="L202">		this.enrolledModules.add(module);</span>
+<span class="nc" id="L203">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

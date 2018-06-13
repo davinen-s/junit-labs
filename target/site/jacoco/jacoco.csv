@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Lab,com.accenture.academy.utils,Module,90,0,0,0,12,0,6,0,6,0
+Lab,com.accenture.academy.exception,ModuleNotFoundException,3,0,0,0,1,0,1,0,1,0
+Lab,com.accenture.academy.exception,BusinessException,7,0,0,0,4,0,2,0,2,0
+Lab,com.accenture.academy.service,UniversityService,96,0,8,0,24,0,7,0,3,0
+Lab,com.accenture.academy,Main,4,0,0,0,2,0,2,0,2,0
+Lab,com.accenture.academy.model,Student,83,22,2,0,32,7,22,2,21,2
+Lab,com.accenture.academy.model,University,15,0,0,0,6,0,3,0,3,0
