@@ -26,6 +26,10 @@ public class UniversityService {
 	 */
 
 	public static University university;
+	
+	static {
+		university = new University();
+	}
 
 	/**
 	 * Register a student in the university database.
@@ -62,6 +66,7 @@ public class UniversityService {
 		} while (university.getCurrentStudent().containsKey(studentId));
 
 		student.setId(studentId);
+		university.addStudent(student);
 		return student;
 
 	}
