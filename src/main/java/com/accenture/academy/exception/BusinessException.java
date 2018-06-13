@@ -12,12 +12,6 @@ public class BusinessException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Default constructor.
-	 */
-	public BusinessException() {
-		super();
-	}
 
 	/**
 	 * Constructor with overloaded parameter.
