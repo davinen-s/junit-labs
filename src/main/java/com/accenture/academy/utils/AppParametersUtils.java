@@ -11,10 +11,10 @@ public class AppParametersUtils {
 	public static final int FREE_MODULE_VOUCHER = 3;
 	
 	/** The last possible student id. */
-	public static final long STUDENT_ID_CEILING = 999_999_999;
+	public static final long STUDENT_ID_CEILING = 9_999_999_999l;
 
 	/** The starting number for student id. AKA the minimum id possible. */
-	public static final long STUDENT_ID_FLOOR = 100_000_000;
+	public static final long STUDENT_ID_FLOOR = 2_150_000_000l;
 	
 	/**
 	 * Private constructor to prevent instantiation of this utility class.

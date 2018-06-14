@@ -14,7 +14,7 @@ import com.accenture.academy.utils.Module;
  */
 public class Student {
 
-	private Integer id;
+	private int id;
 	private String firstName;
 	private String lastName;
 	private Integer age;
@@ -50,16 +50,16 @@ public class Student {
 	/**
 	 * @return the id
 	 */
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
-	 * @param id
+	 * @param studentId
 	 *            the id to set
 	 */
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(int studentId) {
+		this.id = studentId;
 	}
 
 	/**
