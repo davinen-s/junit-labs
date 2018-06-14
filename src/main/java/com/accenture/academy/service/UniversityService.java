@@ -25,7 +25,7 @@ public class UniversityService {
 	 * layer.
 	 */
 
-	public static University university;
+	public static University university = new University();
 
 	/**
 	 * Register a student in the university database.
