@@ -27,20 +27,20 @@ public class UniversityServiceTest {
 	List<String> moduleNames;
 	University university;
 	Student student;
-	Map<Integer,Student> map;
+	Map<Integer, Student> map;
 
 	@Before
 	public void setup() {
 		university = new University();
-		
+
 		student = new Student();
 		student.setId(1);
-		
+
 		moduleNames = new ArrayList<>();
 		moduleNames.add(Module.AGILE_METHODOLOGY.getModuleName());
 		moduleNames.add(Module.BUILD_AND_UNIT_TEST.getModuleName());
 		moduleNames.add(Module.MOBILE_DEVELOPMENT.getModuleName());
-		
+
 		map = new TreeMap<>();
 		map.put(student.getId(), student);
 		university.addStudent(map);
@@ -99,42 +99,35 @@ public class UniversityServiceTest {
 		}
 
 	}
-	
-	@Test
-	public void shouldThrowBusinessExceptionWhenFreeVouchersIsZero() {
+
+	@Test(expected = BusinessException.class)
+	public void shouldThrowBusinessExceptionWhenFreeVouchersIsZero() throws ModuleNotFoundException, BusinessException {
 
 		student = UniversityService.registerStudent("Tom", "Lambart", LocalDate.parse("1996-01-23"), false);
 		student.setFreeModuleVouchers(0);
 		map.put(student.getId(), student);
 
-		try {
-			UniversityService.enrollModules(student.getId(), moduleNames);
-		} catch (ModuleNotFoundException | BusinessException e) {
-			e.getMessage();
-		}
+		UniversityService.enrollModules(student.getId(), moduleNames);
 
 	}
-	
-	@Test
-	public void shouldThrowModuleNotFoundExceptionWhenModuleDoesNotExist() {
+
+	@Test(expected = ModuleNotFoundException.class)
+	public void shouldThrowModuleNotFoundExceptionWhenModuleDoesNotExist()
+			throws ModuleNotFoundException, BusinessException {
 
 		student = UniversityService.registerStudent("Tom", "Lambart", LocalDate.parse("1996-01-23"), false);
 		moduleNames.add("Citizenship Education");
 		map.put(student.getId(), student);
 
-		try {
-			UniversityService.enrollModules(student.getId(), moduleNames);
-		} catch (ModuleNotFoundException | BusinessException e) {
-			e.getMessage();
-		}
+		UniversityService.enrollModules(student.getId(), moduleNames);
 
 	}
-	
+
 	@Test
 	public void testIfUniversityServiceIsNotNull() {
 		assertNotNull(new UniversityService());
 	}
-	
+
 	@Test
 	public void testIfBuinessExceptionIsNotNull() {
 		assertNotNull(new BusinessException());
